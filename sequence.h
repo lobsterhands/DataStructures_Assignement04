@@ -82,13 +82,14 @@
 
 #include <cstdlib>  // provides size_t
 
-namespace CS3358_SP16_A04_sequenceOfNum
+namespace CS3358_SP16_A04_sequence
 {
+   template <class Item>
    class sequence
    {
    public:
       // TYPEDEFS and MEMBER CONSTANTS
-      typedef double value_type;
+      typedef Item value_type;
       typedef size_t size_type;
       static const size_type CAPACITY = 10;
       // CONSTRUCTOR
@@ -112,34 +113,5 @@ namespace CS3358_SP16_A04_sequenceOfNum
    };
 }
 
-namespace CS3358_SP16_A04_sequenceOfChar
-{
-   class sequence
-   {
-   public:
-      // TYPEDEFS and MEMBER CONSTANTS
-      typedef char value_type;
-      typedef size_t size_type;
-      static const size_type CAPACITY = 10;
-      // CONSTRUCTOR
-      sequence();
-      // MODIFICATION MEMBER FUNCTIONS
-      void start();
-      void end();
-      void advance();
-      void move_back();
-      void add(const value_type& entry);
-      void remove_current();
-      // CONSTANT MEMBER FUNCTIONS
-      size_type size() const;
-      bool is_item() const;
-      value_type current() const;
-
-   private:
-      value_type data[CAPACITY];
-      size_type used;
-      size_type current_index;
-   };
-}
-
+#include "sequence.template"  // Include implementation
 #endif
